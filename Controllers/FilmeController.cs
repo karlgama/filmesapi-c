@@ -12,12 +12,17 @@ public class FilmeController : ControllerBase
     [HttpPost]
     public void Create([FromBody]Filme filme)
     {
-        filmes.Add(filme);
+       filmes.Add(filme);
     }
 
     [HttpGet]
-    public List<Filme> List()
+    public IEnumerable<Filme> List()
     {
         return filmes;
+    }
+    
+    [HttpGet("{id}")]
+    public Filme? getById([FromQuery]int id) {
+        return filmes.FirstOrDefault(filme=>filme.Id==id);
     }
 }
