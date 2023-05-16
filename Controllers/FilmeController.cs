@@ -10,19 +10,22 @@ public class FilmeController : ControllerBase
     private static List<Filme> filmes = new List<Filme>();
 
     [HttpPost]
-    public void Create([FromBody]Filme filme)
+    public ActionResult Create([FromBody]Filme filme)
     {
-       filmes.Add(filme);
+        filmes.Add(filme);
+        return CreatedAtAction(nameof(GetById), new {id=filme.Id},filme);
     }
 
     [HttpGet]
-    public IEnumerable<Filme> List()
+    public IEnumerable<Filme> List([FromQuery]int skip=0,[FromQuery] int take=50)
     {
-        return filmes;
+        return filmes.Skip(skip).Take(take);
     }
     
     [HttpGet("{id}")]
-    public Filme? getById([FromQuery]int id) {
-        return filmes.FirstOrDefault(filme=>filme.Id==id);
+    public IActionResult GetById([FromQuery]int id) {
+        var filme =  filmes.FirstOrDefault(filme=>filme.Id==id);
+        if (filme == null) return NotFound();
+        return Ok(filme);
     }
 }
