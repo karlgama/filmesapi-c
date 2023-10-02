@@ -1,5 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
+using FilmesApi.Data;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<FilmeContext>(opts => opts
+    .UseSqlite(connectionString));
 // Add services to the container.
 
 builder.Services.AddControllers();
