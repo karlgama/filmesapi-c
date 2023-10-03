@@ -1,0 +1,118 @@
+# Arquivos de compilação .NET
+bin/
+obj/
+
+# Arquivos de dependências
+*.user
+*.suo
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Ferramentas do .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Pacotes NuGet
+packages/
+*.nupkg
+*.paket/paket.exe
+
+# Arquivos de log
+*.log
+
+# Outros arquivos temporários
+*.bak
+*.swp
+*~
+Thumbs.db
+.DS_Store
+
+# Arquivos de configuração
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+
+# Logs e saída de build
+*.log
+*.logs
+*.dbmdl
+*.jfm
+*.pdb
+*.idb
+*.deploy
+*.ipch
+*.ncb
+*.dbproj.schemaview
+*.svclog
+*.scc
+
+# Arquivos de análise de código
+*.sln.docstates
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+.vs/
+*.db
+/.vs/
