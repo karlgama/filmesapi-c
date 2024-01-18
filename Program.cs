@@ -7,7 +7,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddDbContext<FilmeContext>(opts => opts
-    .UseSqlite(connectionString));
+    .UseLazyLoadingProxies().UseSqlite(connectionString));
 // Add services to the container.
 
 builder.Services.AddControllers()

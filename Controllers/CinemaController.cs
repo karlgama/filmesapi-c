@@ -1,5 +1,6 @@
 using AutoMapper;
 using FilmesApi.Data;
+using FilmesApi.Data.DTOs.cinema;
 using Microsoft.AspNetCore.Mvc;
 
 namespace filmesApi.Controllers;
@@ -14,5 +15,10 @@ public class CinemaController : ControllerBase
     {
         _context = context;
         _mapper = mapper;
+    }
+
+    public IEnumerable<ReadCinemaDTO> RecuperarCinemas()
+    {
+
     }
 }
