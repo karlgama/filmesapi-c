@@ -1,3 +1,5 @@
+using FilmesApi.Data.DTOs.sessao;
+
 namespace filmesApi.Data.DTOs;
 
 public class ReadFilmeDto
@@ -8,4 +10,6 @@ public class ReadFilmeDto
     public int Duracao { get; set; }
 
     public DateTime HoraDaConsulta { get; set; } = DateTime.Now;
+
+    public ICollection<ReadSessaoDTO> Sessoes { get; set; }
 }

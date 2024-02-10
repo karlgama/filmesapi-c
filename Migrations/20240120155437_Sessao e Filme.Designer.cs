@@ -2,6 +2,7 @@
 using FilmesApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace filmesApi.Migrations
 {
     [DbContext(typeof(FilmeContext))]
-    partial class FilmeContextModelSnapshot : ModelSnapshot
+    [Migration("20240120155437_Sessao e Filme")]
+    partial class SessaoeFilme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
@@ -83,15 +85,10 @@ namespace filmesApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CinemaId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("FilmeId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CinemaId");
 
                     b.HasIndex("FilmeId");
 
@@ -111,26 +108,13 @@ namespace filmesApi.Migrations
 
             modelBuilder.Entity("FilmesApi.Models.Sessao", b =>
                 {
-                    b.HasOne("FilmesApi.Models.Cinema", "Cinema")
-                        .WithMany("Sessoes")
-                        .HasForeignKey("CinemaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("filmesApi.Models.Filme", "Filme")
                         .WithMany("Sessoes")
                         .HasForeignKey("FilmeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cinema");
-
                     b.Navigation("Filme");
-                });
-
-            modelBuilder.Entity("FilmesApi.Models.Cinema", b =>
-                {
-                    b.Navigation("Sessoes");
                 });
 
             modelBuilder.Entity("filmesApi.Models.Endereco", b =>

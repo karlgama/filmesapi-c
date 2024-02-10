@@ -17,8 +17,5 @@ public class CinemaController : ControllerBase
         _mapper = mapper;
     }
 
-    public IEnumerable<ReadCinemaDTO> RecuperarCinemas()
-    {
 
-    }
 }

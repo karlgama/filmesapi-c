@@ -16,4 +16,6 @@ public class Cinema
     public int EnderecoId { get; set; }
 
     public virtual Endereco Endereco { get; set; }
+
+    public virtual ICollection<Sessao> Sessoes {get; set; }
 }
