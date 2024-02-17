@@ -2,5 +2,6 @@ namespace FilmesApi.Data.DTOs.sessao;
 
 public class ReadSessaoDTO
 {
-    public int Id { get; set; }
+    public int CinemaId { get; set; }
+    public int FilmeId { get; set; }
 }
